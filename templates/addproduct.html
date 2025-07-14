@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="container my-5 d-flex justify-content-center">
+  <div class="card shadow-lg w-100" style="max-width: 600px;">
+    
+    <!-- Header -->
+    <div class="card-header bg-dark text-white text-center">
+      <h4 class="mb-0"><i class="bi bi-box-seam-fill me-2"></i> Add New Product</h4>
+    </div>
+
+    <!-- Form Body -->
+    <div class="card-body">
+      <form action="" method="POST" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {{ prdform.as_p }}
+
+        <div class="d-grid mt-4">
+          <button type="submit" class="btn btn-success btn-lg rounded-pill shadow-sm">
+            <i class="bi bi-plus-circle me-1"></i> Add Product
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+{% endblock main %}

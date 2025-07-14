@@ -1,0 +1,191 @@
+
+
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #000;
+  }
+
+  footer {
+    width: 100%;
+    background-color: #111;
+    padding: 3px ;  /* Reduced padding */
+    margin-top: 30px;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-top: 50px;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 15px;  /* Reduced bottom margin */
+  }
+
+  .footer-section img {
+    margin-bottom: 10px; /* Reduced space for images */
+  }
+
+  .footer-section p, .footer-section a {
+    font-size: 13px; /* Reduced font size */
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 1.4; /* Slightly reduced line height */
+  }
+
+  .footer-section p i {
+    margin-right: 6px;  /* Reduced icon spacing */
+  }
+
+  .footer-section h3 {
+    font-size: 16px;  /* Reduced header font size */
+    font-weight: 600;
+    margin-bottom: 10px;  /* Reduced bottom margin */
+    position: relative;
+    color: #fff;
+  }
+
+  .footer-section h3::after {
+    content: "";
+    width: 20px;  /* Reduced width of the line */
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 6px;  /* Reduced margin for list items */
+  }
+
+  .footer-section ul li a:hover {
+    color: #00aced;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #333;
+    text-align: center;
+    padding-top: 10px;  /* Reduced padding */
+    margin-top: 15px;  /* Reduced margin */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer-bottom p {
+    margin: 6px 0;  /* Reduced margin */
+    font-size: 13px; /* Reduced font size */
+    color: #fff;
+  }
+
+  .social-icons {
+    margin: 6px 0;  /* Reduced margin */
+  }
+
+  .social-icons a {
+    color: #fff;
+    margin: 0 6px;  /* Reduced spacing between icons */
+    font-size: 16px;  /* Reduced icon size */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #00aced;
+  }
+
+  .payment-methods {
+    margin-top: 10px;  /* Reduced margin */
+  }
+
+  .payment-methods img {
+    height: 25px;  /* Reduced image size */
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+</style>
+
+
+<footer>
+    <div class="footer-container">
+  
+      
+      <div class="footer-section">
+        <h4 style="color: #fff;">Book Nest</h4>
+        <p><i class="fas fa-map-marker-alt"></i> 59 Street, Mumbai City, India</p>
+        <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
+        <p><i class="fas fa-envelope"></i> BookNest@example.com</p>
+      </div>
+  
+      
+      <div class="footer-section">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="{% url 'aboutus' %}">About Us</a></li>
+          <!-- <li><a href="#">Latest Post</a></li>
+          <li><a href="#">Selling Tips</a></li>
+          <li><a href="#">Advertising</a></li> -->
+          <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+      </div>
+  
+      
+      <div class="footer-section">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="{% url 'logindetails'%}">Login</a></li>
+          <li><a href="{% url 'viewcart' %}">Cart</a></li>
+          <li><a href="#">My Account</a></li>
+          <!-- <li><a href="#">Wishlist</a></li>
+          <li><a href="#">Order History</a></li> -->
+        </ul>
+      </div>
+  
+      
+      <div class="footer-section">
+        <h3>Help & Support</h3>
+        <ul>
+          <li><a href="#">How To Shop</a></li>
+          <li><a href="#">Payment</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Delivery</a></li>
+          <li><a href="#">Privacy & Cookie Policy</a></li>
+        </ul>
+      </div>
+  
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© Copyright BookNest 2025.</p>
+  
+     
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        <a href="#"><i class="fas fa-rss"></i></a>
+      </div>
+    </div>
+</footer>

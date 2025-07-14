@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="container text-center mt-5">
+    <div class="card shadow p-5">
+        <!-- <img src="{% static 'images/success.png' %}" alt="Payment Successful" class="mb-4" style="width: 120px;"> -->
+        <h1 class="text-success fw-bold">Payment Successful!</h1>
+        <p class="lead">Thank you for your order. Your payment has been received successfully.</p>
+        
+        <div class="alert alert-danger mt-4">
+            <strong>Order ID:</strong> {{ order_id }} <br>
+            <strong>Total Amount:</strong> ${{ total_amount }}
+        </div>
+        
+        <a href="{% url 'placedorders' %}" class="btn btn-dark mt-3">View My Orders</a>
+        <a href="{% url 'home' %}" class="btn btn-warning mt-3">Continue Shopping</a>
+    </div>
+</div>
+
+{% endblock main %}

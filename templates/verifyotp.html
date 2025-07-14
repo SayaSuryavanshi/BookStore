@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+<style>
+    .form-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        background-color: #f9f9f9;
+    }
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-container label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-container input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .form-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .form-container button:hover {
+        background-color: #218838;
+    }
+
+   
+</style>
+
+<div class="form-container">
+    <h2>OTP Verification</h2>
+    <p><strong>OTP Purpose:</strong> {{ otp_purspose|capfirst }}</p>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="otp">Enter OTP</label>
+        <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+
+        <button type="submit">Verify OTP</button>
+    </form>
+
+    {% if messages %}
+        <div class="message">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+{% endblock main %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div class="container mt-5">
+    <h2 class="text-center text-dark mb-4"><i class="bi bi-cart-check me-2"></i>Placed Orders</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Books Image</th>
+                <th>Books Name</th>
+                <th>Quantity</th>
+                <th>Order Date</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in placeedordersdetails %}
+            <tr>
+                <td><img src="{{ i.books.prodimage.url }}" alt="..." height="100px"></td>
+                <td>{{ i.books.prodname|truncatechars:30 }}</td>
+                <td>{{ i.quantity }}</td>
+                <td>{{ i.order_date }}</td>
+                <td>Rs. {{ i.total_price }}</td>
+                <td><span class="btn btn-sm btn-primary">{{ i.status }}</span></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock main %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="container my-5">
+
+  <div class="row">
+    <!-- Left: Product Details -->
+    <div class="col-md-8">
+      <h4 class="mb-4">Your Order</h4>
+      {% for i in prod %}
+      <div class="card mb-3 shadow-sm">
+        <div class="row g-0 align-items-center">
+          <div class="col-md-3 text-center">
+            <img src="{{ i.pid.prodimage.url }}" class="img-fluid p-2" alt="{{ i.pid.prodname }}" style="height: 150px; object-fit: contain;">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title mb-1">{{ i.pid.prodname }}</h5>
+              <p class="card-text mb-0 text-muted">Price: ₹{{ i.pid.prodprice }}</p>
+              <p class="card-text text-muted">Quantity: {{ i.qty }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Right: Customer Info -->
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-dark text-white">
+          <strong>Address Details</strong>
+        </div>
+        <div class="card-body">
+          <p><strong>Name:</strong> {{ cust_details.custname }}</p>
+          <p><strong>Address:</strong> {{ cust_details.custaddress }}</p>
+          <p><strong>City:</strong> {{ cust_details.city }}</p>
+          <p><strong>State:</strong> {{ cust_details.state }}</p>
+          <p><strong>Pincode:</strong> {{ cust_details.pincode }}</p>
+          <p><strong>Contact:</strong> {{ cust_details.custcontact }}</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="mb-3">Total: <strong>₹{{ total }}</strong></h5>
+          <div class="mb-3">
+            <button class="btn-outline-dark rounded">{{ paypal_payment.render }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock main %}
