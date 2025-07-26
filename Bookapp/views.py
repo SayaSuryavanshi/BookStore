@@ -31,7 +31,11 @@ def home(request):
 
 def categorydetails(request, id):
     cate=Categories.objects.all()
-    prod=Products.objects.filter(cat=id) #cat coming from model
+    if id == 0:  # or 'all'
+        prod = Products.objects.all()
+    else:
+        prod=Products.objects.filter(cat=id)
+    # prod=Products.objects.filter(cat=id) #cat coming from model
     return render(request,'index.html',{'cat':cate,'prod':prod})
 
 def register(request):
